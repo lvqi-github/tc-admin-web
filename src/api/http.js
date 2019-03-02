@@ -2,7 +2,6 @@ import axios from 'axios'
 import qs from 'qs'
 import router from '../router'
 import { setBaseUrl } from './config.js'
-
 import { Message } from 'element-ui'
 
 axios.defaults.baseURL = setBaseUrl();
@@ -31,8 +30,9 @@ axios.interceptors.response.use(response => {
     let res = response.data;
     if (res.resultCode != "1000") {
         switch (res.resultCode) {
-            case '1501': // 重新授权
-                router.replace({ name: 'Author'});
+            case '4502': // 重新授权
+                localStorage.removeItem('admin_token');
+                router.replace({ path: '/login'});
                 break;
             default:
                 Message({

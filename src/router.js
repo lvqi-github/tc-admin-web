@@ -60,14 +60,6 @@ export const routes = [
           path: '/author/list',
           name: '作者列表',
           component: resolve => require(['@/views/author/AuthorList'], resolve)
-        }, {
-          path: '/author/add',
-          name: '作者添加',
-          component: resolve => require(['@/views/author/AuthorAdd'], resolve)
-        }, {
-          path: '/author/update',
-          name: '作者修改',
-          component: resolve => require(['@/views/author/AuthorUpdate'], resolve)
         }]
       },
       {
@@ -88,6 +80,26 @@ export const routes = [
           path: '/article/update',
           name: '文章修改',
           component: resolve => require(['@/views/article/ArticleUpdate'], resolve)
+        }]
+      },
+      {
+        path: '/record',
+        name: '战绩管理',
+        component: tcRightMain,
+        isParent: true, //二级菜单
+        redirect: '/record/list',
+        children: [{
+          path: '/record/list',
+          name: '战绩列表',
+          component: resolve => require(['@/views/record/RecordList'], resolve)
+        }, {
+          path: '/record/add',
+          name: '战绩添加',
+          component: resolve => require(['@/views/record/RecordAdd'], resolve)
+        }, {
+          path: '/record/update',
+          name: '战绩修改',
+          component: resolve => require(['@/views/record/RecordUpdate'], resolve)
         }]
       }
     ]

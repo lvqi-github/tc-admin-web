@@ -3,3 +3,7 @@ export function setBaseUrl() {
     // return process.env.NODE_ENV == 'production' ? 'http://www.tcxx.com' : 'http://localhost:8082/serve/ball';
     return process.env.NODE_ENV == 'production' ? 'http://www.tcxx.com' : '/api';
 }
+
+export function setFileUploadUrl() {
+    return process.env.NODE_ENV == 'production' ? 'http://www.tcxx.com/serve/admin/upload/fileUpload' : '/api/upload/fileUpload';
+}
