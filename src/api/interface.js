@@ -1,17 +1,17 @@
 import axios from './http'
 
-// -------------------------- 用户 -------------------------------------
-export const userLogin = params => {
+// -------------------------- 登陆 -------------------------------------
+export const adminUserLogin = params => {
     return axios({
-        url: '/login/userLogin',
+        url: '/login/adminUserLogin',
         method: 'post',
         params
     })
 }
 
-export const getUserInfo = params => {
+export const getAdminUserInfo = params => {
     return axios({
-        url: '/login/getUserInfo',
+        url: '/login/getAdminUserInfo',
         method: 'get',
         params
     })
@@ -22,6 +22,92 @@ export const deleteFile = params => {
     return axios({
         url: '/upload/deleteFile',
         method: 'post',
+        params
+    })
+}
+
+// -------------------------- 用户 -------------------------------------
+export const getUserList = params => {
+    return axios({
+        url: '/user/getUserList',
+        method: 'get',
+        params
+    })
+}
+
+// -------------------------- 会员 -------------------------------------
+export const getMemberList = params => {
+    return axios({
+        url: '/member/getMemberList',
+        method: 'get',
+        params
+    })
+}
+
+// -------------------------- 会员充值套餐 -------------------------------------
+export const getMemberRechargePackageList = params => {
+    return axios({
+        url: '/memberRechargePackage/getMemberRechargePackageList',
+        method: 'get',
+        params
+    })
+}
+
+export const memberRechargePackageAdd = params => {
+    return axios({
+        url: '/memberRechargePackage/memberRechargePackageAdd',
+        method: 'post',
+        params
+    })
+}
+
+export const memberRechargePackageUpdate = params => {
+    return axios({
+        url: '/memberRechargePackage/memberRechargePackageUpdate',
+        method: 'post',
+        params
+    })
+}
+
+// -------------------------- 订单 ------------------------------------
+export const getOrderTypeList = params => {
+    return axios({
+        url: '/order/getOrderTypeList',
+        method: 'get',
+        params
+    })
+}
+
+export const getOrderPayStatusList = params => {
+    return axios({
+        url: '/order/getOrderPayStatusList',
+        method: 'get',
+        params
+    })
+}
+
+export const getOrderList = params => {
+    return axios({
+        url: '/order/getOrderList',
+        method: 'get',
+        params
+    })
+}
+
+// -------------------------- 会员充值记录 ------------------------------------
+export const getMemberRechargeRecordList = params => {
+    return axios({
+        url: '/memberRechargeRecord/getMemberRechargeRecordList',
+        method: 'get',
+        params
+    })
+}
+
+// -------------------------- 文章购买记录 ------------------------------------
+export const getArticlePurchaseRecordList = params => {
+    return axios({
+        url: '/articlePurchaseRecord/getArticlePurchaseRecordList',
+        method: 'get',
         params
     })
 }
@@ -103,7 +189,7 @@ export const articleUpdate = params => {
 // -------------------------- 战绩 ------------------------------------
 export const getHitRecordTypeList = params => {
     return axios({
-        url: '/record/getHitRecordTypeList',
+        url: '/hitRecord/getHitRecordTypeList',
         method: 'get',
         params
     })
@@ -111,7 +197,7 @@ export const getHitRecordTypeList = params => {
 
 export const getHitRecordList = params => {
     return axios({
-        url: '/record/getHitRecordList',
+        url: '/hitRecord/getHitRecordList',
         method: 'get',
         params
     })
@@ -119,7 +205,7 @@ export const getHitRecordList = params => {
 
 export const hitRecordAdd = params => {
     return axios({
-        url: '/record/hitRecordAdd',
+        url: '/hitRecord/hitRecordAdd',
         method: 'post',
         params
     })
@@ -127,7 +213,7 @@ export const hitRecordAdd = params => {
 
 export const getByRecordId = params => {
     return axios({
-        url: '/record/getByRecordId',
+        url: '/hitRecord/getByRecordId',
         method: 'get',
         params
     })
@@ -135,7 +221,7 @@ export const getByRecordId = params => {
 
 export const hitRecordUpdate = params => {
     return axios({
-        url: '/record/hitRecordUpdate',
+        url: '/hitRecord/hitRecordUpdate',
         method: 'post',
         params
     })
@@ -143,9 +229,19 @@ export const hitRecordUpdate = params => {
 
 
 export default {
-    userLogin,
-    getUserInfo,
+    adminUserLogin,
+    getAdminUserInfo,
     deleteFile,
+    getUserList,
+    getMemberList,
+    getMemberRechargePackageList,
+    memberRechargePackageAdd,
+    memberRechargePackageUpdate,
+    getOrderTypeList,
+    getOrderPayStatusList,
+    getOrderList,
+    getMemberRechargeRecordList,
+    getArticlePurchaseRecordList,
     getAuthorList,
     getPlatformSourceList,
     getAuthorSelectOptions,

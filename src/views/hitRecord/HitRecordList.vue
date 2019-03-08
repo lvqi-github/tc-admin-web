@@ -13,7 +13,7 @@
                 </el-col>
                 <el-col :span="9">
                     <el-form-item label="作者">
-                        <el-select v-model="tableReqParams.authorId" placeholder="请选择" :loading="authorOptionsLoading">
+                        <el-select v-model="tableReqParams.authorId" placeholder="请选择" clearable :loading="authorOptionsLoading">
                             <el-option-group v-for="group in authorSelectOptions" :key="group.label" :label="group.label">
                                 <el-option v-for="item in group.options" :key="item.value" :label="item.label" :value="item.value">
                                 </el-option>
@@ -24,7 +24,7 @@
                 <el-col :span="8">
                     <div style="float: right">
                         <el-button icon="el-icon-search" @click="search">查询</el-button>
-                        <router-link to="/record/add">
+                        <router-link to="/hitRecord/add">
                             <el-button type="primary" icon="el-icon-circle-plus-outline" style="margin-left: 10px">添加</el-button>
                         </router-link>
                     </div>
@@ -139,7 +139,7 @@
                 this.fetchData()
             },
             handleEdit(index, row) {
-                this.$router.push({path: '/record/update', query: {recordId: row.recordId}})
+                this.$router.push({path: '/hitRecord/update', query: {recordId: row.recordId}})
             }
         }
     }

@@ -35,7 +35,7 @@
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" :loading="createLoading" @click="onSubmit">立即创建</el-button>
-                <router-link to="/record/list">
+                <router-link to="/hitRecord/list">
                     <el-button style="margin-left: 10px">取消</el-button>
                 </router-link>
             </el-form-item>
@@ -172,7 +172,7 @@
                             this.createLoading = false;
                             if(res.resultCode == "1000"){
                                 this.$message.success('创建成功！');
-                                this.$router.push({ path: '/record/list'});
+                                this.$router.push({ path: '/hitRecord/list'});
                             }
                         }).catch(() => {
                             this.createLoading = false;

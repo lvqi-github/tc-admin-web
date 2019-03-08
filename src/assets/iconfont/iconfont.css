@@ -15,52 +15,52 @@
   -moz-osx-font-smoothing: grayscale;
   color:rgb(191, 203, 217);
 }
-/*密码*/
+/* 密码 */
 .icon-mima:before { content: "\e620"; }
-
+/* 修改 */
 .icon-xiugai:before { content: "\e632"; }
-/*用户*/
+/* 用户 */
 .icon-yonghu:before { content: "\e633"; }
-
+/* 安全（盾牌的样子） */
 .icon-anquantianchong:before { content: "\e670"; }
-
+/* 分类、广场、其他 */
 .icon-fenleiorguangchangorqitatianchong:before { content: "\e67d"; }
-
+/* 更多（3个点） */
 .icon-gengduotianchong:before { content: "\e67f"; }
-
+/* 设置 */
 .icon-shezhitianchong:before { content: "\e68d"; }
-
+/* 首页 */
 .icon-shouyetianchong:before { content: "\e692"; }
-
+/* 通讯录 */
 .icon-tongxunlutianchong:before { content: "\e699"; }
-
+/* 信封 */
 .icon-xinfengtianchong:before { content: "\e69e"; }
-
+/* 修改 */
 .icon-xiugaitianchong:before { content: "\e69f"; }
-
+/* 用户 */
 .icon-yonghutianchong:before { content: "\e6a2"; }
-
+/* 图片 */
 .icon-tupiantianchong:before { content: "\e6b2"; }
-
+/* 手机 */
 .icon-shoujitianchong:before { content: "\e6c4"; }
-
+/* 下箭头 */
 .icon-xiajiantou:before { content: "\e6cc"; }
-
+/* 一般提示（圆圈里面感叹号） */
 .icon-yibantishi:before { content: "\e6cd"; }
-/*眼睛*/
+/* 眼睛 */
 .icon-yanjing:before { content: "\e6ce"; }
-
+/* 查话费 */
 .icon-chahuafeitianchong:before { content: "\e6d1"; }
-
+/* 发送信息 */
 .icon-fasongxinxitianchong:before { content: "\e6d2"; }
-
+/* 文本编辑 */
 .icon-wenbenbianjitianchong:before { content: "\e6d4"; }
-
+/* 首页 */
 .icon-shouye:before { content: "\e718"; }
-
+/* 安全 */
 .icon-anquan:before { content: "\e719"; }
-
+/* 刷新（2个箭头 围绕圆圈） */
 .icon-yibanduihuan:before { content: "\e739"; }
-
+/* 帮助 */
 .icon-bangzhu:before { content: "\e73a"; }
 

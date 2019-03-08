@@ -62,7 +62,7 @@ export default new Vuex.Store({
     },
     GetUserInfo({ commit }) {
       return new Promise((resolve, reject) => {
-        http.getUserInfo().then(res => {
+        http.getAdminUserInfo().then(res => {
           if(res.resultCode == "1000"){
             commit('SET_USER', {
               username: res.value.username,
@@ -81,7 +81,7 @@ export default new Vuex.Store({
         password: CryptoJS.MD5(params.password).toString()
       };
       return new Promise((resolve, reject) => {
-        http.userLogin(reqInfo).then(res => {
+        http.adminUserLogin(reqInfo).then(res => {
           if(res.resultCode == "1000"){
             window.localStorage.setItem("admin_token", res.value);
           }
