@@ -53,11 +53,17 @@
             </el-table-column>
             <el-table-column prop="endTime" label="结束时间" width="160">
             </el-table-column>
+            <el-table-column prop="pushJobStatusName" label="推送任务状态" width="150" align="center">
+                <template slot-scope="scope">
+                    <el-tag :type="scope.row.pushJobStatus === 2 ? 'success' : 'danger'">{{scope.row.pushJobStatusName}}</el-tag>
+                </template>
+            </el-table-column>
             <el-table-column prop="created" label="创建时间" width="160">
             </el-table-column>
-            <el-table-column label="操作" width="120" fixed="right">
+            <el-table-column label="操作" width="300" fixed="right">
                 <template slot-scope="scope">
                     <el-button size="mini" icon="el-icon-edit" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                    <el-button v-show="scope.row.pushJobStatus == 1" size="small" type="primary" v-loading.fullscreen.lock="generatePushJobLoading" @click="handleGeneratePushJob(scope.$index, scope.row)">生成推送任务</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -90,6 +96,10 @@
                 articleList: [], // 列表数据
                 totalElements: 0, //列表数据条数
                 listLoading: false, //列表loading
+                generatePushJobReqParams: {
+                    articleId: ''
+                },//生成推送任务请求参数
+                generatePushJobLoading: false //生成推送任务loading
             }
         },
         created() {
@@ -129,6 +139,18 @@
             },
             handleEdit(index, row) {
                 this.$router.push({path: '/article/update', query: {articleId: row.articleId}})
+            },
+            handleGeneratePushJob(index, row) {
+                let self = this;
+                this.generatePushJobLoading = true;
+                this.generatePushJobReqParams.articleId = row.articleId;
+                this.$api.articleGeneratePushJob(self.generatePushJobReqParams).then(res => {
+                    this.generatePushJobLoading = false;
+                    if(res.resultCode == "1000"){
+                        this.$message.success('生成推送任务成功！');
+                        this.fetchData();
+                    }
+                })
             }
         }
     }

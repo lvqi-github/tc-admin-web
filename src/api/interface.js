@@ -26,6 +26,39 @@ export const deleteFile = params => {
     })
 }
 
+// -------------------------- 系统 -------------------------------------
+export const jobStart = params => {
+    return axios({
+        url: '/jobManager/start',
+        method: 'post',
+        params
+    })
+}
+
+export const jobStop = params => {
+    return axios({
+        url: '/jobManager/stop',
+        method: 'post',
+        params
+    })
+}
+
+export const getAllJobStatus = params => {
+    return axios({
+        url: '/jobManager/getAllJobStatus',
+        method: 'get',
+        params
+    })
+}
+
+export const jobRunOnce = params => {
+    return axios({
+        url: '/jobManager/runOnce',
+        method: 'post',
+        params
+    })
+}
+
 // -------------------------- 用户 -------------------------------------
 export const getUserList = params => {
     return axios({
@@ -186,6 +219,14 @@ export const articleUpdate = params => {
     })
 }
 
+export const articleGeneratePushJob = params => {
+    return axios({
+        url: '/article/articleGeneratePushJob',
+        method: 'post',
+        params
+    })
+}
+
 // -------------------------- 战绩 ------------------------------------
 export const getHitRecordTypeList = params => {
     return axios({
@@ -227,11 +268,41 @@ export const hitRecordUpdate = params => {
     })
 }
 
+// -------------------------- 作者订阅 ------------------------------------
+export const getUserAuthorSubscribeList = params => {
+    return axios({
+        url: '/userAuthorSubscribe/getUserAuthorSubscribeList',
+        method: 'get',
+        params
+    })
+}
+
+// -------------------------- 模板消息推送 ------------------------------------
+export const getTemplateMessagePushStatusList = params => {
+    return axios({
+        url: '/templateMessagePush/getTemplateMessagePushStatusList',
+        method: 'get',
+        params
+    })
+}
+
+export const getTemplateMessagePushList = params => {
+    return axios({
+        url: '/templateMessagePush/getTemplateMessagePushList',
+        method: 'get',
+        params
+    })
+}
+
 
 export default {
     adminUserLogin,
     getAdminUserInfo,
     deleteFile,
+    jobStart,
+    jobStop,
+    getAllJobStatus,
+    jobRunOnce,
     getUserList,
     getMemberList,
     getMemberRechargePackageList,
@@ -251,9 +322,13 @@ export default {
     articleAdd,
     getByArticleId,
     articleUpdate,
+    articleGeneratePushJob,
     getHitRecordTypeList,
     getHitRecordList,
     hitRecordAdd,
     getByRecordId,
-    hitRecordUpdate
+    hitRecordUpdate,
+    getUserAuthorSubscribeList,
+    getTemplateMessagePushStatusList,
+    getTemplateMessagePushList
 }

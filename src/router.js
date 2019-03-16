@@ -22,6 +22,23 @@ export const routes = [{
     component: resolve => require(['@/views/dashboard/Dashboard'], resolve)
   }]
 }, {
+  path: '/systemManage',
+  name: '系统管理',
+  component: Layout,
+  iconCls: 'icon-shezhitianchong',
+  children: [{
+    path: '/jobManage',
+    name: 'Job管理',
+    component: tcRightMain,
+    isParent: true, //二级菜单
+    redirect: '/jobManage/list',
+    children: [{
+      path: '/jobManage/list',
+      name: 'job任务列表',
+      component: resolve => require(['@/views/jobManage/JobList'], resolve)
+    }]
+  }]
+}, {
   path: '/userManage',
   name: '用户管理',
   component: Layout,
@@ -168,16 +185,28 @@ export const routes = [{
   name: '订阅管理',
   component: Layout,
   iconCls: 'icon-anquantianchong',
-  leaf: true, //只有一个节点
-  redirect: '/subscribe/list',
   children: [{
-    path: '/subscribe/list',
-    name: '订阅列表',
-    component: resolve => require(['@/views/subscribe/SubscribeList'], resolve)
+    path: '/userAuthorSubscribe',
+    name: '作者订阅管理',
+    component: tcRightMain,
+    isParent: true, //二级菜单
+    redirect: '/userAuthorSubscribe/list',
+    children: [{
+      path: '/userAuthorSubscribe/list',
+      name: '作者订阅列表',
+      component: resolve => require(['@/views/userAuthorSubscribe/UserAuthorSubscribeList'], resolve)
+    }]
   }, {
-    path: '/subscribe/add',
-    name: '新增订阅',
-    component: resolve => require(['@/views/subscribe/SubscribeAdd'], resolve)
+    path: '/templateMessagePush',
+    name: '订阅推送管理',
+    component: tcRightMain,
+    isParent: true, //二级菜单
+    redirect: '/templateMessagePush/list',
+    children: [{
+      path: '/templateMessagePush/list',
+      name: '订阅推送列表',
+      component: resolve => require(['@/views/templateMessagePush/TemplateMessagePushList'], resolve)
+    }]
   }]
 }];
 
