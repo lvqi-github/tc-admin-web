@@ -1,6 +1,7 @@
 module.exports = {
+    productionSourceMap: false,
     devServer: {
-        port: 8080,
+        port: 8081,
         disableHostCheck:true,
         proxy: {
             '/api': {

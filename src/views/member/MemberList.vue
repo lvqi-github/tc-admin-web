@@ -23,7 +23,7 @@
             </el-table-column>
             <el-table-column prop="firstMemberOpenTime" label="首次开通时间" width="200" align="center">
             </el-table-column>
-            <el-table-column prop="memberEndDate" label="会员结束日期" width="180" align="center">
+            <el-table-column prop="memberEndDate" label="会员结束时间" width="180" align="center">
             </el-table-column>
             <el-table-column prop="validName" label="是否有效" width="120" align="center">
                 <template slot-scope="scope">

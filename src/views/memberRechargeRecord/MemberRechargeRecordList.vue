@@ -26,9 +26,9 @@
             </el-table-column>
             <el-table-column prop="daysOfValidity" label="有效期天数" width="100" align="center">
             </el-table-column>
-            <el-table-column prop="validityStartDate" label="有效开始日期" width="160" align="center">
+            <el-table-column prop="validityStartDate" label="有效开始时间" width="180" align="center">
             </el-table-column>
-            <el-table-column prop="validityEndDate" label="有效结束日期" width="160" align="center">
+            <el-table-column prop="validityEndDate" label="有效结束时间" width="180" align="center">
             </el-table-column>
             <el-table-column prop="userId" label="用户id" width="180" align="center">
             </el-table-column>

@@ -27,8 +27,9 @@
                            accept="image/jpeg,image/png" :limit="1" list-type="picture-card"
                            :file-list="recordImgList"
                            :before-upload="beforeUpload"
+                           :data="fileUploadData"
                            :on-exceed="onExceed"
-                           :on-remove="handleRemove"
+                           :before-remove="handleRemove"
                            :on-success="handleSuccess">
                     <i class="el-icon-plus"></i>
                 </el-upload>
@@ -62,6 +63,9 @@
             return {
                 fileUploadAction: setFileUploadUrl(),
                 FileUploadHeaders: {Authorization: token},
+                fileUploadData:{
+                    fileType:'hitRecord'
+                },
                 recordImgList: [],
                 authorOptionsLoading: false, //作者下拉数据loading
                 authorOptions: [], //作者下拉数据
@@ -122,9 +126,10 @@
                         this.updateForm.recordImgUrl = res.value.recordImgUrl;
 
                         if (res.value.recordImgUrl != ""){
-                            let recordImgUrlArr = res.value.recordImgUrl.split('?')[0].split('/');
+                            let noHttpRecordImgUrl = res.value.recordImgUrl.split('?')[0].split('//')[1];
+                            let start = noHttpRecordImgUrl.indexOf("/");
                             let recordImgItem = {
-                                name: recordImgUrlArr[recordImgUrlArr.length - 1],
+                                name: noHttpRecordImgUrl.substring(start + 1),
                                 url: res.value.recordImgUrl
                             }
                             this.recordImgList.push(recordImgItem);

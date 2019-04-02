@@ -160,7 +160,7 @@
             openCallBack() {
                 if (this.platformSourceOptions.length == 0) {
                     this.platformSourceLoading = true;
-                    this.$api.getPlatformSourceList().then(res => {
+                    this.$api.getPlatformSourceList({}).then(res => {
                         if(res.resultCode == "1000"){
                             this.platformSourceOptions = res.values;
                         }

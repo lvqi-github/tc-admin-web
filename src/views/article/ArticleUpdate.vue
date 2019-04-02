@@ -28,8 +28,9 @@
                            accept="image/jpeg,image/png" :limit="1" list-type="picture-card"
                            :file-list="previewImgList"
                            :before-upload="beforeUpload"
+                           :data="fileUploadData"
                            :on-exceed="onExceed"
-                           :on-remove="previewImgHandleRemove"
+                           :before-remove="previewImgHandleRemove"
                            :on-success="previewImgHandleSuccess">
                     <i class="el-icon-plus"></i>
                 </el-upload>
@@ -43,8 +44,9 @@
                            accept="image/jpeg,image/png" :limit="1" list-type="picture-card"
                            :file-list="contentImgList"
                            :before-upload="beforeUpload"
+                           :data="fileUploadData"
                            :on-exceed="onExceed"
-                           :on-remove="contentImgHandleRemove"
+                           :before-remove="contentImgHandleRemove"
                            :on-success="contentImgHandleSuccess">
                     <i class="el-icon-plus"></i>
                 </el-upload>
@@ -97,6 +99,9 @@
             return {
                 fileUploadAction: setFileUploadUrl(),
                 FileUploadHeaders: {Authorization: token},
+                fileUploadData:{
+                    fileType:'article'
+                },
                 previewImgList: [],
                 contentImgList: [],
                 authorOptionsLoading: false, //作者下拉数据loading
@@ -177,18 +182,20 @@
                         this.updateForm.releaseStatus = res.value.releaseStatus;
 
                         if (res.value.articlePreviewImg != ""){
-                            let previewImgUrlArr = res.value.articlePreviewImg.split('?')[0].split('/');
+                            let noHttpArticlePreviewImgUrl = res.value.articlePreviewImg.split('?')[0].split('//')[1];
+                            let start = noHttpArticlePreviewImgUrl.indexOf("/");
                             let previewImgItem = {
-                                name: previewImgUrlArr[previewImgUrlArr.length - 1],
+                                name: noHttpArticlePreviewImgUrl.substring(start + 1),
                                 url: res.value.articlePreviewImg
                             }
                             this.previewImgList.push(previewImgItem);
                         }
 
                         if (res.value.articleContentImg != ""){
-                            let contentImgUrlArr = res.value.articleContentImg.split('?')[0].split('/');
+                            let noHttpContentImgUrlArr = res.value.articleContentImg.split('?')[0].split('//')[1];
+                            let start = noHttpContentImgUrlArr.indexOf("/");
                             let contentImgItem = {
-                                name: contentImgUrlArr[contentImgUrlArr.length - 1],
+                                name: noHttpContentImgUrlArr.substring(start + 1),
                                 url: res.value.articleContentImg
                             }
                             this.contentImgList.push(contentImgItem);

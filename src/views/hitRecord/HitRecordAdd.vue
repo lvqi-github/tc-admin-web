@@ -27,8 +27,9 @@
                            accept="image/jpeg,image/png" :limit="1" list-type="picture-card"
                            :file-list="recordImgList"
                            :before-upload="beforeUpload"
+                           :data="fileUploadData"
                            :on-exceed="onExceed"
-                           :on-remove="handleRemove"
+                           :before-remove="handleRemove"
                            :on-success="handleSuccess">
                     <i class="el-icon-plus"></i>
                 </el-upload>
@@ -62,6 +63,9 @@
             return {
                 fileUploadAction: setFileUploadUrl(),
                 FileUploadHeaders: {Authorization: token},
+                fileUploadData:{
+                    fileType:'hitRecord'
+                },
                 recordImgList: [],
                 authorOptionsLoading: false, //作者下拉数据loading
                 authorOptions: [], //作者下拉数据

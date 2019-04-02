@@ -13,7 +13,9 @@ export default new Vuex.Store({
         opened: !+Cookies.get('sidebarStatus'),
         withoutAnimation: false
       },
-      device: 'desktop'
+      device: 'desktop',
+      appId: '3f4404d68b7742ce895d7723a7a1f384',
+      appSecret: 'f7c0ba8db844432eaf2d99ccd3870aa3'
     },
     user: {
       name: '',
@@ -62,7 +64,7 @@ export default new Vuex.Store({
     },
     GetUserInfo({ commit }) {
       return new Promise((resolve, reject) => {
-        http.getAdminUserInfo().then(res => {
+        http.getAdminUserInfo({}).then(res => {
           if(res.resultCode == "1000"){
             commit('SET_USER', {
               username: res.value.username,
