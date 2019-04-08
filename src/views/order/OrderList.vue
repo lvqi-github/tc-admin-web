@@ -47,7 +47,7 @@
             </el-table-column>
             <el-table-column prop="thirdPartyPayWaterNo" label="第三方支付流水号" width="180" align="center">
             </el-table-column>
-            <el-table-column prop="businessNo" label="业务单号" width="180" align="center">
+            <el-table-column prop="businessData" label="业务数据" width="300" align="center">
             </el-table-column>
             <el-table-column prop="modified" label="修改时间" width="160" align="center">
             </el-table-column>

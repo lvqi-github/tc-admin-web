@@ -59,6 +59,14 @@ export const jobRunOnce = params => {
     })
 }
 
+export const initWeChatMenu = params => {
+    return axios({
+        url: '/weChatManager/initWeChatMenu',
+        method: 'post',
+        data: params
+    })
+}
+
 // -------------------------- 用户 -------------------------------------
 export const getUserList = params => {
     return axios({
@@ -303,6 +311,7 @@ export default {
     jobStop,
     getAllJobStatus,
     jobRunOnce,
+    initWeChatMenu,
     getUserList,
     getMemberList,
     getMemberRechargePackageList,

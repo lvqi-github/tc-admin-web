@@ -29,7 +29,8 @@
         {schedulerName: "refreshWeChatBaseAccessTokenJobScheduler", jobDetailName: "refreshWeChatBaseAccessTokenJobDetail", description: "刷新微信基础accessToken调度任务", status: 2, remark: "1小时一次"},
         {schedulerName: "syncWeChatPublicAccountFocusOpenIdJobScheduler", jobDetailName: "syncWeChatPublicAccountFocusOpenIdJobDetail", description: "同步微信公众号关注用户数据调度任务", status: 2, remark: "每日5点执行"},
         {schedulerName: "pushTemplateMessageJobScheduler", jobDetailName: "pushTemplateMessageJobDetail", description: "推送模板消息任务", status: 2, remark: "5分钟执行一次"},
-        {schedulerName: "clearTemplateMessageDataJobScheduler", jobDetailName: "clearTemplateMessageDataJobDetail", description: "清除模板消息数据任务", status: 2, remark: "每日3-7点 1小时执行一次"}
+        {schedulerName: "clearTemplateMessageDataJobScheduler", jobDetailName: "clearTemplateMessageDataJobDetail", description: "清除模板消息数据任务", status: 2, remark: "每日3-7点 1小时执行一次"},
+        {schedulerName: "queryWeChatOrderPayStatusJobScheduler", jobDetailName: "queryWeChatOrderPayStatusJobDetail", description: "查询微信订单支付状态任务", status: 2, remark: "30分钟执行一次"}
     ];
 
     export default {
