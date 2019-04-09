@@ -27,7 +27,7 @@
             </el-table-column>
             <el-table-column prop="validName" label="是否有效" width="120" align="center">
                 <template slot-scope="scope">
-                    <el-tag :type="scope.row.valid === 1 ? 'success' : 'warning'">{{scope.row.sexName}}</el-tag>
+                    <el-tag :type="scope.row.valid === 1 ? 'success' : 'warning'">{{scope.row.validName}}</el-tag>
                 </template>
             </el-table-column>
             <el-table-column prop="modified" label="修改时间" width="200" align="center">

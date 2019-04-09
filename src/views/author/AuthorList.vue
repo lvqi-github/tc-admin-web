@@ -14,7 +14,7 @@
             </el-table-column>
             <el-table-column prop="authorName" label="作者昵称">
             </el-table-column>
-            <el-table-column prop="platformSource" label="平台来源">
+            <el-table-column prop="platformSourceName" label="平台来源">
             </el-table-column>
             <el-table-column prop="modified" label="修改时间" width="180" align="center">
             </el-table-column>
@@ -123,7 +123,7 @@
                         trigger: 'blur'
                     }, {
                         min: 2,
-                        max: 6,
+                        max: 12,
                         message: '长度在 2 到 6 个字符'
                     }],
                     platformSource: [{
