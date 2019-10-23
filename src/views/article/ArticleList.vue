@@ -49,10 +49,6 @@
                     <el-tag :type="articleStatusTag(scope.row.articleStatus)">{{scope.row.articleStatusName}}</el-tag>
                 </template>
             </el-table-column>
-            <el-table-column prop="startTime" label="开始时间" width="160">
-            </el-table-column>
-            <el-table-column prop="endTime" label="结束时间" width="160">
-            </el-table-column>
             <el-table-column prop="pushJobStatusName" label="推送任务状态" width="150" align="center">
                 <template slot-scope="scope">
                     <el-tag :type="scope.row.pushJobStatus === 2 ? 'success' : 'danger'">{{scope.row.pushJobStatusName}}</el-tag>

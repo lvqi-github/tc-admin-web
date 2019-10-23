@@ -69,14 +69,6 @@
                     <el-radio :label="3">已结束</el-radio>
                 </el-radio-group>
             </el-form-item>
-            <el-form-item label="开始时间" prop="startTime">
-                <el-date-picker v-model="updateForm.startTime" type="datetime" value-format="yyyy-MM-dd HH:mm:ss" placeholder="选择开始时间">
-                </el-date-picker>
-            </el-form-item>
-            <el-form-item label="结束时间" prop="endTime">
-                <el-date-picker v-model="updateForm.endTime" type="datetime" value-format="yyyy-MM-dd HH:mm:ss" placeholder="选择结束时间">
-                </el-date-picker>
-            </el-form-item>
             <el-form-item label="是否发布" prop="releaseStatus">
                 <el-switch v-model="updateForm.releaseStatus" :active-value="1" :inactive-value="2">
                 </el-switch>
@@ -120,8 +112,6 @@
                     chargeType: '',
                     price: '',
                     articleStatus: '',
-                    startTime: '',
-                    endTime: '',
                     releaseStatus: ''
                 },
                 rules: {
@@ -177,8 +167,6 @@
                         this.updateForm.chargeType = res.value.chargeType;
                         this.updateForm.price = res.value.price;
                         this.updateForm.articleStatus = res.value.articleStatus;
-                        this.updateForm.startTime = res.value.startTime;
-                        this.updateForm.endTime = res.value.endTime;
                         this.updateForm.releaseStatus = res.value.releaseStatus;
 
                         if (res.value.articlePreviewImg != ""){
